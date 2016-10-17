@@ -22,3 +22,6 @@ namespace ProductsApp.Models
     }
 }
 ```
+
+
+### Todo: as json and as xml
