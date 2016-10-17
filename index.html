@@ -26,9 +26,9 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown="slides/intro.md">
-				<section>Slide 2</section>
-				<section data-markdown="slides/c-sharp.md">
+				<section data-markdown="slides/intro.md"></section>
+				<section data-markdown="slides/1-c-sharp.md"
+								 data-separator-vertical="^\n\n">
 				</section>
 			</div>
 		</div>
@@ -40,6 +40,10 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+
+				width: 1280,
+
+				height: 720,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
