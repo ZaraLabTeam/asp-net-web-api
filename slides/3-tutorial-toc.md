@@ -5,9 +5,10 @@
 
 1. Create a Web API Project
 2. Adding a Data Model
-3. Adding a Controller
-4. Calling the Web API with Javascript
+3. Creating a Database
+4. Adding a Controller
+5. Calling the Web API with Javascript
     * Getting a List of Products
     * Getting a Product By ID
-5. Publishing to `Azure`
-6. Tools and software
+6. Publishing to `Azure`
+7. Tools and software
