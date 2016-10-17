@@ -1,9 +1,9 @@
 ## Brief history of C# #
 
-* Family: `C` <!-- .element class="highlight" -->
+* Family: **C** <!-- .element class="text-success" -->
 * Developed and designed by Microsoft
 * Platform: Common Language Infrastructure
-* Filename extension: `.cs` <!-- .element class="highlight" -->
+* Filename extension: **.cs** <!-- .element class="text-success" -->
 * Webpage: https://www.visualstudio.com/
 
 
@@ -69,6 +69,7 @@ namespace SchoolSystem.DataModels.Abstraction
 * Polymorphism
 * Inheritance
 
+Notes:
 Using classes polymorphically, what is inheritance, 
 design by contract and how encapsulation work
 
@@ -85,18 +86,20 @@ design by contract and how encapsulation work
 <!-- .element style="text-align: left" -->
 ### What's the one thing you can always count on in software development?
 
+<q>
 No matter where you work, what you're building, or what language you
 are programming in, whats the one true constant that will be with you
 always?
-<!-- .element class="quote" -->
+</q>
 
 # CHANGE 
 <!-- .element class="fragment fade-right" style="color: #1b91ff" -->
 
+<q class="fragment">
 No matter how well you design an application, over time an
 application will grow and change.
-<!-- .element class="fragment quote" -->
+</q>
 
 \# quoted from 
 <!-- .element class="fragment" style="text-align: right" --> 
-"`Head First Design Patterns`"
+"*Head First Design Patterns*" <!-- .element class="text-info" -->

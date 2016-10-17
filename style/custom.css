@@ -1,9 +1,23 @@
+.reveal {
+    font-size: 60px;
+}
+
 .reveal .slides {
-    text-align: left;
+    /*text-align: left;*/
+}
+
+.reveal section img {
+    border: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.reveal section .big-img {
+    height: 800px;
 }
 
 .highlight, .highlight.highlight-blue {
-    color: #1b91ff;
+    color: #92c6f5;
 }
 
 .highlight.highlight-red {
@@ -24,4 +38,9 @@
 
 .text-right {
     text-align: right;
+}
+
+pre.code.code-large code {
+    height: 900px;
+    max-height: inherit;
 }

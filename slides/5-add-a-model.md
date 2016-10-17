@@ -10,6 +10,7 @@ can indicate which format it wants by setting the Accept header
 in the HTTP request message.
 
 
+### C# #
 ```C#
 namespace ProductsApp.Models
 {
@@ -24,4 +25,15 @@ namespace ProductsApp.Models
 ```
 
 
-### Todo: as json and as xml
+### JSON
+```json
+{
+    "id": 1,
+    "name": "Generic Washing Machine",
+    "category": "Feng Shui",
+    "price": 50
+}
+```
+
+
+### Todo: XML
