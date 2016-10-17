@@ -1,9 +1,9 @@
 ## Brief history of C# #
 
-* Family: `C`
+* Family: `C` <!-- .element class="highlight" -->
 * Developed and designed by Microsoft
 * Platform: Common Language Infrastructure
-* Filename extension: `.cs`
+* Filename extension: `.cs` <!-- .element class="highlight" -->
 * Webpage: https://www.visualstudio.com/
 
 
