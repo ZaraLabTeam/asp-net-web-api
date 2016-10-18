@@ -6,12 +6,53 @@ The database stores our data. In this case information about
 All successfully created products are stored in the 
 database, and can be modified or deleted.
 
+
+### About Relational Databases
+
+<q>We are tables that can relate to one other</q>
+
+* Relational
+    * **SQL** <!-- .element class="text-info" --> - 
+    *Structured Query Language*
+* Tables
+* Primary Key
+* Foreign Key
+* Constraints
+
+Notes:
+Virtually all relational database systems use SQL (Structured 
+Query Language) as the language for querying 
+and maintaining the database.
+Relational database strictly uses relations to store data.
+A relational database matches data by using common characteristics
+found in the dataset. And the resulting group is termed as Schema.
+
+Entity tables represents objects from the real world
+Most often they are nouns from the specification
+Example: Student, Course, Town
+Columns are the characteristics of the entities, they have name
+and type, for example Students would have Name(text), Faculty
+Number(number), Photo (binary), Date of enlistment (date)
+Relationships are dependencies between the tables
+Students are trainer in courses - many to many
+Courses are held in towns - can be many to many or many to one
 For easier and quick access data models must have some unique 
 characteristic to be easily distinct and found in the database records. 
-This is called the 
-**primary key** <!-- .element class="text-danger" -->
-and most often it is the **Id** <!-- .element class="text-danger" -->
-of the model but not necessarily  
+This is called the **primary key** and most often it is the **Id**
+of the model but not necessarily
+How to chose a primary key, rule of thumb - always define a primary key
+Use `identity` to implement auto-increment
+Other constraints can be minimum/maximum length start/end date to be
+unique and others
+Since each row in a table has its own unique key, rows in a table can
+be linked to rows in other tables by storing the unique key of the row
+to which it should be linked (where such unique key is known as a “foreign key”).
+
+
+### Database Diagram
+
+![database diagram](../img/tutorial/database-diagram.png)
+<!-- .element class="big-img" -->
 
 
 ### Options
@@ -38,9 +79,10 @@ of the model but not necessarily
 
 SQLite works great as the database engine for most low to medium 
 traffic websites (which is to say, most websites).  
-Generally speaking, any site that gets fewer than 
+Generally speaking, any site that gets fewer than
+ <!-- .element class="fragment" -->
 **100K hits/day** <!-- .element class="highlight highlight-red" -->
-should work fine with SQLite. 
+should work fine with SQLite.
 
 <q class="fragment">The SQLite website
 (https://www.sqlite.org/) uses SQLite itself, of 
@@ -48,9 +90,19 @@ course, and as of 2015 it handles about 400K to 500K
 HTTP requests per day</q>
 
 Notes:
-SQLite emphasizes economy, efficiency, reliability, independence, 
-and simplicity. It is not directly comparable to client/server SQL 
-database engines.
+SQLite is not directly comparable to client/server SQL database engines
+such as MySQL, Oracle, PostgreSQL, or SQL Server
+Because an SQLite database requires no administration, it works well 
+in devices that must operate without expert human support. SQLite
+is a good fit for use in cellphones, set-top boxes, televisions,
+game consoles, cameras, watches, kitchen appliances, thermostats,
+automobiles, machine tools, airplanes, remote sensors, drones, 
+medical devices, and robots: the "internet of things".
+SQLite is often used as the on-disk file format for desktop
+applications such as version control systems, financial analysis
+tools, media cataloging and others.
+There are many benefits to this approach, including improved
+application performance, reduced cost and complexity, and improved reliability.
 
 
 <!-- .element class="text-left" -->
@@ -68,9 +120,6 @@ insights on any data, whether on-premises or in the cloud.</q>
 *concurrency* <!-- .element class="label label-primary" -->
 *centralization* <!-- .element class="label label-success" -->
 *control* <!-- .element class="label label-danger" -->
-
-* **SQL** <!-- .element class="text-info" --> - 
-*Structured Query Language*
 
 * **T-SQL** <!-- .element class="text-info" --> -
 Transact-SQL, an extension of SQL
@@ -106,3 +155,14 @@ done through an ORM Service/Framework
 
 \# **ORM** 
 <!-- .element class="text-info" --> - Object-Relational Mapping
+
+
+### What database modeling involves
+
+* Identification of Entities
+* Identification of Columns
+* Defining a primary key for each entity table
+* Identification and modeling of relationships
+    * Multiplicity of relationships
+* Defining other constraints
+* Filling test data in the tables
