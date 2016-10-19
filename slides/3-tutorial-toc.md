@@ -7,7 +7,7 @@
 3. Creating a Database
 4. Adding a Controller
 5. Calling the Web API with Javascript
-    * Getting a List of Products
-    * Getting a Product By ID
+    * Getting a list of items
+    * Getting items by ID
 6. Publishing to [Azure](https://azure.microsoft.com/)
 7. Tools and software

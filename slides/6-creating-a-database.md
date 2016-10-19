@@ -28,20 +28,20 @@ A relational database matches data by using common characteristics
 found in the dataset. And the resulting group is termed as Schema.
 
 Entity tables represents objects from the real world
-Most often they are nouns from the specification
-Example: Student, Course, Town
 Columns are the characteristics of the entities, they have name
 and type, for example Students would have Name(text), Faculty
 Number(number), Photo (binary), Date of enlistment (date)
 Relationships are dependencies between the tables
 Students are trainer in courses - many to many
 Courses are held in towns - can be many to many or many to one
+
 For easier and quick access data models must have some unique 
 characteristic to be easily distinct and found in the database records. 
 This is called the **primary key** and most often it is the **Id**
 of the model but not necessarily
 How to chose a primary key, rule of thumb - always define a primary key
 Use `identity` to implement auto-increment
+
 Other constraints can be minimum/maximum length start/end date to be
 unique and others
 Since each row in a table has its own unique key, rows in a table can
@@ -53,6 +53,34 @@ to which it should be linked (where such unique key is known as a “foreign key
 
 ![database diagram](../img/tutorial/database-diagram.png)
 <!-- .element class="big-img" -->
+
+
+### SQL Query Demo
+
+```sql
+SELECT    EmployeeID, FirstName, LastName, HireDate, City 
+FROM      Employees
+WHERE     City IN ('Seattle', 'Tacoma', 'Redmond')
+ORDER BY  City DESC
+```
+
+```sql
+SELECT    EmployeeID, FirstName, LastName, HireDate, City
+FROM      Employees
+WHERE     HireDate BETWEEN '1-june-1992' AND '15-december-1993'
+```
+
+```sql
+INSERT INTO Projects(Name, StartDate)
+VALUES     ('New Project', GETDATE())
+```
+
+```sql
+UPDATE    Employees
+SET       Salary = Salary * 1.10,
+          JobTytle = 'Senior ' + JobTitle
+WHERE     DepartmentID = 3
+```
 
 
 ### Options

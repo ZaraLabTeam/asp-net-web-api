@@ -16,20 +16,16 @@
     height: 800px;
 }
 
-.highlight, .highlight.highlight-blue {
-    color: #92c6f5;
-}
-
-.highlight.highlight-red {
-    color: #ff2c2d;
-}
-
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
     text-transform: inherit;
 }
 
-.text-center {
-    text-align: center;
+.reveal table th, .reveal table td {
+    border-right: 1px solid;
+}
+
+.reveal table th:last-child, .reveal table td:last-child {
+    border-right: none;
 }
 
 .text-left {

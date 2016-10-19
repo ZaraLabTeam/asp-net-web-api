@@ -3,12 +3,10 @@
 ![asp net](../img/asp-net-logo2.png)
 
 
-<q>
-ASP.NET Web API is a framework that makes it easy to build HTTP 
+<q>ASP.NET Web API is a framework that makes it easy to build HTTP 
 services that reach a broad range of clients, including browsers 
 and mobile devices. ASP.NET Web API is an ideal platform for building 
-RESTful applications on the .NET Framework
-</q>
+RESTful applications on the .NET Framework</q>
 
 \# said
 <!-- .element class="fragment" style="text-align: right" --> 
@@ -16,7 +14,7 @@ RESTful applications on the .NET Framework
 
 
 <!-- .element class="text-left" -->
-### HTTP
+### HTTP - The Hypertext Transfer Protocol 
 *simple* <!-- .element class="label label-info" -->
 *flexible* <!-- .element class="label label-primary" -->
 *ubiquitous* <!-- .element class="label label-success" -->
@@ -33,3 +31,10 @@ you can think of has an HTTP library, so HTTP services can reach a
 broad range of clients, including browsers, mobile devices, and 
 traditional desktop applications.
 Describe CRUD briefly
+
+
+### Web API Default Behavior
+
+![api behavior](../img/api-process.png)
+
+http://localhost:1337/api/posts
