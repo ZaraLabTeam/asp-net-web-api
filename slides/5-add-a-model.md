@@ -12,14 +12,17 @@ in the HTTP request message.
 
 ### C# #
 ```C#
-namespace ProductsApp.Models
+namespace JokesApi.Data.Models
 {
-    public class Product
+    using JokesApi.Data.Common.Models;
+
+    public class Joke : BaseModel<int>
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Category { get; set; }
-        public decimal Price { get; set; }
+        public string Content { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public virtual JokeCategory Category { get; set; }
     }
 }
 ```
