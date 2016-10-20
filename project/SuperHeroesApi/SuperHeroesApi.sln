@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperHeroesApi", "SuperHero
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperHeroesApi.Tests", "SuperHeroesApi.Tests\SuperHeroesApi.Tests.csproj", "{8ABE9142-9CE1-4949-8430-2AD5CEFC37A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperHeroseApi.Models", "SuperHeroseApi.Models\SuperHeroseApi.Models.csproj", "{798037BF-7BBA-467C-84AC-A58C28F95BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperHeroesApi.Data", "SuperHeroesApi.Data\SuperHeroesApi.Data.csproj", "{73ED0C6D-C833-42AC-AB0E-E339A53A25EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8ABE9142-9CE1-4949-8430-2AD5CEFC37A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ABE9142-9CE1-4949-8430-2AD5CEFC37A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ABE9142-9CE1-4949-8430-2AD5CEFC37A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798037BF-7BBA-467C-84AC-A58C28F95BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798037BF-7BBA-467C-84AC-A58C28F95BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798037BF-7BBA-467C-84AC-A58C28F95BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798037BF-7BBA-467C-84AC-A58C28F95BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73ED0C6D-C833-42AC-AB0E-E339A53A25EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73ED0C6D-C833-42AC-AB0E-E339A53A25EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73ED0C6D-C833-42AC-AB0E-E339A53A25EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73ED0C6D-C833-42AC-AB0E-E339A53A25EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
