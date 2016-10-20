@@ -3,8 +3,7 @@
     using System.Web.Mvc;
 
     using JokesApi.Services.Data;
-    using JokesApi.Web.Infrastructure.Mapping;
-    using JokesApi.Web.ViewModels.Home;
+    using ViewModels.Joke;
 
     public class JokesController : BaseController
     {

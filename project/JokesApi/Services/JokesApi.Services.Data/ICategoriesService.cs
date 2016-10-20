@@ -9,5 +9,7 @@
         IQueryable<JokeCategory> GetAll();
 
         JokeCategory EnsureCategory(string name);
+
+        JokeCategory Find(string category);
     }
 }

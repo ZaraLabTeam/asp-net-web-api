@@ -1,9 +1,9 @@
-﻿namespace JokesApi.Web.ViewModels.Home
+﻿namespace JokesApi.Web.ViewModels.Joke
 {
     using AutoMapper;
-    using JokesApi.Data.Models;
-    using JokesApi.Services.Web;
-    using JokesApi.Web.Infrastructure.Mapping;
+    using Data.Models;
+    using Infrastructure.Mapping;
+    using Services.Web;
 
     public class JokeViewModel : IMapFrom<Joke>, IHaveCustomMappings
     {

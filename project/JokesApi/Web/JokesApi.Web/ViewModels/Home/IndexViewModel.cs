@@ -1,6 +1,7 @@
 ﻿namespace JokesApi.Web.ViewModels.Home
 {
     using System.Collections.Generic;
+    using Joke;
 
     public class IndexViewModel
     {

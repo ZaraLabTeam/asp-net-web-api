@@ -6,6 +6,7 @@
     using JokesApi.Data.Common;
     using JokesApi.Data.Models;
     using JokesApi.Services.Web;
+    using RequestModels;
 
     public class JokesService : IJokesService
     {
@@ -21,7 +22,38 @@
         public Joke GetById(string id)
         {
             var intId = this.identifierProvider.DecodeId(id);
-            var joke = this.jokes.GetById(intId);
+            var joke = this.GetById(intId);
+            return joke;
+        }
+
+        public Joke GetById(int id)
+        {
+            var joke = this.jokes.GetById(id);
+            return joke;
+        }
+
+        public IQueryable<Joke> GetRange(int start, int end)
+        {
+            if (start < 0 || end < start)
+            {
+                throw new ArgumentException("Invalid start/end parameters");
+            }
+
+            return this.jokes.All().OrderBy(j => j.Id).Skip(start).Take(end - start);
+        }
+
+        public Joke Create(JokeCreateModel model, JokeCategory category)
+        {
+            var joke = new Joke
+            {
+                Category = category,
+                CreatedById = model.CreatedById,
+                Content = model.Content,
+            };
+
+            this.jokes.Add(joke);
+            this.jokes.Save();
+
             return joke;
         }
 

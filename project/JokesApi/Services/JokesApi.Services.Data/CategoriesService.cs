@@ -28,6 +28,11 @@
             return category;
         }
 
+        public JokeCategory Find(string category)
+        {
+            return this.categories.All().First(c => c.Name == category);
+        }
+
         public IQueryable<JokeCategory> GetAll()
         {
             return this.categories.All().OrderBy(x => x.Name);

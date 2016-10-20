@@ -8,6 +8,7 @@
     using Services.Data;
 
     using ViewModels.Home;
+    using ViewModels.Joke;
 
     public class HomeController : BaseController
     {

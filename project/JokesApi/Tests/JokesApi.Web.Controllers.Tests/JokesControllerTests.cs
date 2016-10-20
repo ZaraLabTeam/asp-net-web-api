@@ -3,10 +3,10 @@
     using JokesApi.Data.Models;
     using JokesApi.Services.Data;
     using JokesApi.Web.Infrastructure.Mapping;
-    using JokesApi.Web.ViewModels.Home;
     using Moq;
     using NUnit.Framework;
     using TestStack.FluentMVCTesting;
+    using ViewModels.Joke;
 
     [TestFixture]
     public class JokesControllerTests
