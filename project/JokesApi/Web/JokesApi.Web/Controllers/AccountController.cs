@@ -265,13 +265,13 @@
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return this.RedirectToAction("ResetPasswordConfirmation", "Account");
+                return this.RedirectToAction("ResetPasswordConfirmation", "AccountApi");
             }
 
             var result = await this.UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return this.RedirectToAction("ResetPasswordConfirmation", "Account");
+                return this.RedirectToAction("ResetPasswordConfirmation", "AccountApi");
             }
 
             this.AddErrors(result);
@@ -294,7 +294,7 @@
             // Request a redirect to the external login provider
             return new ChallengeResult(
                 provider,
-                this.Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+                this.Url.Action("ExternalLoginCallback", "AccountApi", new { ReturnUrl = returnUrl }));
         }
 
         // GET: /Account/SendCode

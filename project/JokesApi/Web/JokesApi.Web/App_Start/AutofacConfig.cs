@@ -10,7 +10,7 @@
     using Autofac.Integration.WebApi;
 
     using Controllers;
-
+    using Controllers.Api;
     using Data;
     using Data.Common;
 
@@ -71,6 +71,9 @@
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .AssignableTo<BaseController>().PropertiesAutowired();
+
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .AssignableTo<BaseApiController>().PropertiesAutowired();
         }
     }
 }

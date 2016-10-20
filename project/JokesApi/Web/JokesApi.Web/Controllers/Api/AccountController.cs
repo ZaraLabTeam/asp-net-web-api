@@ -1,23 +1,22 @@
-﻿namespace JokesApi.Web.Areas.Api.Controllers
+﻿namespace JokesApi.Web.Controllers.Api
 {
     using System.Data.Entity;
     using System.Net.Http;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Http;
+    using Areas.Api.Helpers;
     using Data.Models;
-    using Helpers;
-    using JokesApi.Web;
-    using JokesApi.Web.ViewModels.Account;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Cookies;
+    using ViewModels.Account;
+    using Web;
 
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : BaseController
+    public class AccountController : BaseApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager userManager;
