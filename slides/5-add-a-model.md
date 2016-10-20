@@ -14,7 +14,7 @@ in the HTTP request message.
 ```C#
 namespace JokesApi.Data.Models
 {
-    using JokesApi.Data.Common.Models;
+    using Common.Models;
 
     public class Joke : BaseModel<int>
     {
@@ -23,6 +23,10 @@ namespace JokesApi.Data.Models
         public int CategoryId { get; set; }
 
         public virtual JokeCategory Category { get; set; }
+
+        public string CreatedById { get; set; }
+
+        public virtual ApplicationUser CreatedBy { get; set; }
     }
 }
 ```
@@ -31,12 +35,28 @@ namespace JokesApi.Data.Models
 ### JSON
 ```json
 {
-    "id": 1,
-    "name": "Generic Washing Machine",
-    "category": "Feng Shui",
-    "price": 50
+  "Id": 1112,
+  "Content": "Падат в една пропаст двама алпинисти - песимист и оптимист.\n\nПесимиста:\n\n- Падам...\n\nОптимиста:\n\n- ЛЕТЯ!!!",
+  "Category": "Разни",
+  "CreatedById": "6464249d-7702-4d51-adfd-d637fe4522e5",
+  "CreatedBy": "admin@admin.com",
+  "Url": "/Joke/MTExMi4xMjMxMjMxMzEyMw=="
 }
 ```
 
 
-### Todo: XML
+### XML
+```xml
+<JokeViewModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/JokesApi.Web.ViewModels.Joke">
+    <Category>Разни</Category>
+    <Content>Падат в една пропаст двама алпинисти - песимист и оптимист.
+    Песимиста:
+    - Падам...
+    Оптимиста:
+    - ЛЕТЯ!!!
+    <CreatedBy>admin@admin.com</CreatedBy>
+    <CreatedById>6464249d-7702-4d51-adfd-d637fe4522e5</CreatedBy
+    </Content>
+    <Id>1112</Id>
+</JokeViewModel>
+```

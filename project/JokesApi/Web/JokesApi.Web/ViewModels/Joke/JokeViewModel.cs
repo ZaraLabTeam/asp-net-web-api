@@ -13,6 +13,10 @@
 
         public string Category { get; set; }
 
+        public string CreatedById { get; set; }
+
+        public string CreatedBy { get; set; }
+
         public string Url
         {
             get
@@ -25,7 +29,8 @@
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Joke, JokeViewModel>()
-                .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
+                .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name))
+                .ForMember(x => x.CreatedBy, opt => opt.MapFrom(x => x.CreatedBy.Email));
         }
     }
 }

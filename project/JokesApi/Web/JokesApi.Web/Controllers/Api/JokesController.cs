@@ -36,6 +36,7 @@
             return this.Ok(viewModel);
         }
 
+        [Authorize]
         [HttpPost]
         public IHttpActionResult Create(JokeCreateModel model)
         {
