@@ -49,7 +49,8 @@ namespace JokesApi.Data.Models
 ```xml
 <JokeViewModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/JokesApi.Web.ViewModels.Joke">
     <Category>Разни</Category>
-    <Content>Падат в една пропаст двама алпинисти - песимист и оптимист.
+    <Content>
+    Падат в една пропаст двама алпинисти - песимист и оптимист.
     Песимиста:
     - Падам...
     Оптимиста:

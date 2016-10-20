@@ -48,12 +48,24 @@
             return this.TryCreateJoke(model);
         }
 
+        [HttpGet]
+        [Route("api/jokes/random/{count:int:min(1)}")]
+        public IHttpActionResult Random(int count)
+        {
+            var jokes = this.jokes.GetRandomJokes(count)
+                .To<JokeViewModel>()
+                .ToList();
+
+            return this.Ok(jokes);
+        }
+
         private IHttpActionResult TryCreateJoke(JokeCreateModel model)
         {
             model.CreatedById = this.UserId;
             var category = this.categories.Find(model.Category);
             var joke = this.jokes.Create(model, category);
             var locationHeader = new Uri(this.Url.Link("JokesApi", new { id = joke.Id, controller = "Jokes" }));
+
             return this.Created(locationHeader, this.Mapper.Map<JokeViewModel>(joke));
         }
     }

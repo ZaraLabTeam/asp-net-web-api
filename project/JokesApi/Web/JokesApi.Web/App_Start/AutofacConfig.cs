@@ -19,13 +19,15 @@
 
     public static class AutofacConfig
     {
+        private static IContainer container;
+
         public static void RegisterAutofac()
         {
             var builder = new ContainerBuilder();
 
-            // Register your MVC and WebApi controllers.
+            // Register your MVC controllers.
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             // OPTIONAL: Register model binders that require DI.
             builder.RegisterModelBinders(Assembly.GetExecutingAssembly());
@@ -44,10 +46,18 @@
             RegisterServices(builder);
 
             // Set the dependency resolver to be Autofac.
-            var container = builder.Build();
+            container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            GlobalConfiguration.Configuration.DependencyResolver =
-                new AutofacWebApiDependencyResolver(container);
+
+            RegisterWebApi(GlobalConfiguration.Configuration);
+        }
+
+        public static IContainer RegisterWebApi(HttpConfiguration config)
+        {
+            var webApiResolver = new AutofacWebApiDependencyResolver(container);
+            config.DependencyResolver = webApiResolver;
+
+            return container;
         }
 
         private static void RegisterServices(ContainerBuilder builder)

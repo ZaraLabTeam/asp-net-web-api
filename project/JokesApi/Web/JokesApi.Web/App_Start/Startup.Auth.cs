@@ -2,8 +2,6 @@
 {
     using System;
     using System.Configuration;
-    using System.Linq;
-    using System.Net.Http.Formatting;
     using System.Web.Http;
     using Areas.Api.Providers;
     using JokesApi.Data;
@@ -12,7 +10,6 @@
     using Microsoft.Owin.Security.DataHandler.Encoder;
     using Microsoft.Owin.Security.Jwt;
     using Microsoft.Owin.Security.OAuth;
-    using Newtonsoft.Json.Serialization;
     using Owin;
 
     public partial class Startup
@@ -23,8 +20,6 @@
             HttpConfiguration httpConfig = new HttpConfiguration();
 
             this.ConfigureOAuthTokenGeneration(app);
-
-            this.ConfigureWebApi(httpConfig);
 
             this.ConfigureOAuthTokenConsumption(app);
 
@@ -52,14 +47,6 @@
 
             // OAuth 2.0 Bearer Access Token Generation
             app.UseOAuthAuthorizationServer(oAuthServerOptions);
-        }
-
-        private void ConfigureWebApi(HttpConfiguration config)
-        {
-            config.MapHttpAttributeRoutes();
-
-            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
-            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
 
         private void ConfigureOAuthTokenConsumption(IAppBuilder app)
