@@ -150,7 +150,7 @@ application will grow and change.</q>
 "*Head First Design Patterns*" <!-- .element class="text-info" -->
 
 
-![composition puzzle](/img/tutorial/puzzle_components.png)
+![composition puzzle](img/tutorial/puzzle_components.png)
 
 Notes:
 A good design will allow for that change without too much work.

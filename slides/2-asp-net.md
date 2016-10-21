@@ -1,6 +1,6 @@
 ## What is ASP.NET Web API
 
-![asp net](../img/asp-net-logo2.png)
+![asp net](img/asp-net-logo2.png)
 
 
 <q>ASP.NET Web API is a framework that makes it easy to build HTTP 
@@ -35,6 +35,6 @@ Describe CRUD briefly
 
 ### Web API Default Behavior
 
-![api behavior](../img/api-process.png)
+![api behavior](img/api-process.png)
 
 http://localhost:1337/api/posts

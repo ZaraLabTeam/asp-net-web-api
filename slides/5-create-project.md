@@ -9,9 +9,9 @@ in the search box on the top right and select
 for **Visual C#**
 
 
-![new project](../img/tutorial/getstarted01.png)
+![new project](img/tutorial/getstarted01.png)
 <!-- .element class="big-img" -->
 
 
-![new project](../img/tutorial/getstarted02.png)
+![new project](img/tutorial/getstarted02.png)
 <!-- .element class="big-img" -->

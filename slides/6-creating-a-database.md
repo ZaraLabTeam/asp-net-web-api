@@ -51,7 +51,7 @@ to which it should be linked (where such unique key is known as a “foreign key
 
 ### Database Diagram
 
-![database diagram](../img/tutorial/database-diagram.png)
+![database diagram](img/tutorial/database-diagram.png)
 <!-- .element class="big-img" -->
 
 

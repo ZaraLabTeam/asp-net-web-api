@@ -10,7 +10,7 @@ At least I am a **view** <!-- .element class="text-danger" --> , right?
 I consider myself a coordinator, but **controller** <!-- .element class="text-warning" -->
 <br /> sounds more professional
 
-![mvc diagram](../img/tutorial/mvc-diagram.png)
+![mvc diagram](img/tutorial/mvc-diagram.png)
 
 Notes:
 The view is the data in it's presentation form, the part the user
