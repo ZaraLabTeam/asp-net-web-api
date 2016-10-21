@@ -1,5 +1,6 @@
 ﻿namespace JokesApi.Web.ViewModels.Joke
 {
+    using System;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
@@ -14,6 +15,8 @@
         public string Category { get; set; }
 
         public string CreatedById { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         public string CreatedBy { get; set; }
 

@@ -31,8 +31,12 @@
         public IHttpActionResult Get(int id)
         {
             var joke = this.jokes.GetById(id);
-            var viewModel = this.Mapper.Map<JokeViewModel>(joke);
+            if (joke == null)
+            {
+                return this.NotFound();
+            }
 
+            var viewModel = this.Mapper.Map<JokeViewModel>(joke);
             return this.Ok(viewModel);
         }
 

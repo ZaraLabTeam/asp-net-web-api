@@ -1,5 +1,6 @@
-﻿namespace JokesApi.Web.Areas.Api.Providers
+﻿namespace JokesApi.Web.Providers
 {
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Data.Models;
@@ -17,10 +18,6 @@
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var allowedOrigin = "*";
-
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
-
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
@@ -33,7 +30,13 @@
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager, "JWT");
 
-            var ticket = new AuthenticationTicket(oAuthIdentity, null);
+            var props = new AuthenticationProperties(new Dictionary<string, string>
+            {
+                { "username", user.UserName },
+                { "id", user.Id }
+            });
+
+            var ticket = new AuthenticationTicket(oAuthIdentity, props);
 
             context.Validated(ticket);
         }

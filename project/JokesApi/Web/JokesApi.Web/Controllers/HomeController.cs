@@ -6,7 +6,7 @@
     using Infrastructure.Mapping;
 
     using Services.Data;
-
+    using ViewModels.Category;
     using ViewModels.Home;
     using ViewModels.Joke;
 
@@ -29,7 +29,7 @@
             var categories =
                 this.Cache.Get(
                     "categories",
-                    () => this.jokeCategories.GetAll().To<JokeCategoryViewModel>().ToList(),
+                    () => this.jokeCategories.GetAll().To<JokeCategorySimpleModel>().ToList(),
                     30 * 60);
             var viewModel = new IndexViewModel
             {

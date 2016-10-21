@@ -1,4 +1,4 @@
-﻿namespace JokesApi.Web.Areas.Api.Helpers
+﻿namespace JokesApi.Web.Helpers
 {
     using System.Collections.Generic;
     using System.Security.Claims;

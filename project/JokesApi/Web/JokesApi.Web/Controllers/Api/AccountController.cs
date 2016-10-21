@@ -5,8 +5,8 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using Areas.Api.Helpers;
     using Data.Models;
+    using Helpers;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
@@ -94,7 +94,10 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var user = this.Mapper.Map<ApplicationUser>(model);
+            var user = new ApplicationUser
+            {
+                UserName = model.Username
+            };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
 

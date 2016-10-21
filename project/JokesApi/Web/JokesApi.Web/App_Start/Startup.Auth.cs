@@ -3,7 +3,6 @@
     using System;
     using System.Configuration;
     using System.Web.Http;
-    using Areas.Api.Providers;
     using JokesApi.Data;
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
@@ -11,6 +10,7 @@
     using Microsoft.Owin.Security.Jwt;
     using Microsoft.Owin.Security.OAuth;
     using Owin;
+    using Providers;
 
     public partial class Startup
     {
@@ -19,11 +19,11 @@
         {
             HttpConfiguration httpConfig = new HttpConfiguration();
 
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
             this.ConfigureOAuthTokenGeneration(app);
 
             this.ConfigureOAuthTokenConsumption(app);
-
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             app.UseWebApi(httpConfig);
         }
@@ -39,7 +39,7 @@
             {
                 // For Dev environment only (on production should be AllowInsecureHttp = false)
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/oauth/token"),
+                TokenEndpointPath = new PathString("/api/oauth/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new ApplicationOAuthProvider(),
                 AccessTokenFormat = new CustomJwtFormat("http://localhost:59822")

@@ -1,4 +1,4 @@
-﻿namespace JokesApi.Web.Areas.Api.Providers
+﻿namespace JokesApi.Web.Providers
 {
     using System;
     using System.Configuration;
