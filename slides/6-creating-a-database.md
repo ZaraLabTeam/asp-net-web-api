@@ -118,14 +118,20 @@ course, and as of 2015 it handles about 400K to 500K
 HTTP requests per day</q>
 
 Notes:
-SQLite is not directly comparable to client/server SQL database engines
+SQLite a self-contained, serverless, zero-configuration, 
+transactional SQL database engine, it is not directly comparable to 
+client/server SQL database engines
 such as MySQL, Oracle, PostgreSQL, or SQL Server
+
 Because an SQLite database requires no administration, it works well 
 in devices that must operate without expert human support. SQLite
 is a good fit for use in cellphones, set-top boxes, televisions,
 game consoles, cameras, watches, kitchen appliances, thermostats,
 automobiles, machine tools, airplanes, remote sensors, drones, 
 medical devices, and robots: the "internet of things".
+Embedded devices: think of devices of which you can only remove
+the battery at most
+
 SQLite is often used as the on-disk file format for desktop
 applications such as version control systems, financial analysis
 tools, media cataloging and others.
