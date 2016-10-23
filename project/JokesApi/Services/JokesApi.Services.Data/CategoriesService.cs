@@ -1,5 +1,6 @@
 ﻿namespace JokesApi.Services.Data
 {
+    using System;
     using System.Linq;
 
     using JokesApi.Data.Common;
@@ -16,6 +17,11 @@
 
         public JokeCategory EnsureCategory(string name)
         {
+            if (string.IsNullOrEmpty(name) || name.Length < 4)
+            {
+                throw new ArgumentException("Category could not pass validation");
+            }
+
             var category = this.categories.All().FirstOrDefault(x => x.Name == name);
             if (category != null)
             {
